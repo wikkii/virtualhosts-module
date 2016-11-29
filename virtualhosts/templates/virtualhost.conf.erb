@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+	ServerName www.<%= @title %>
+	ServerAlias <%= @title %>
+	DocumentRoot /home/wik/public_html/<%= @title %>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+<Directory "/home/wik/public_html/<%= @title %>">
+	AllowOverride ALL
+	Require all granted
+</Directory>
